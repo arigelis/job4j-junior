@@ -16,7 +16,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="job4j_junior" />
+        <module name="chapter_001" />
       </profile>
     </annotationProcessing>
   </component>
