@@ -29,11 +29,7 @@ public class JaggerArrayIterator implements Iterator {
     }
 
     public Integer next() {
-        if (this.hasNext()) {
-            return value[index++];
-        } else {
-            return 0;
-        }
+        return value[index++];
     }
 
     public void remove() {
