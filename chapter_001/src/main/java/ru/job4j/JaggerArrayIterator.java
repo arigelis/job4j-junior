@@ -1,35 +1,41 @@
 package ru.job4j;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class JaggerArrayIterator implements Iterator {
-    int[] value;// = {{1, 2}, {3, 4}};
-    int index = 0;
+    int[][] value;// = {{1, 2}, {3, 4}};
+    int indexRow = 0;
+    int indexColumn = 0;
 
     public JaggerArrayIterator(int[][] value) {
-        int initiar = 0;
-        for (int i = 0; i < value.length; i++) {
-            for (int j = 0; j < value[i].length; j++) {
-                initiar++;
-            }
-        }
-        int[] tmp = new int[initiar];
-        int counter = 0;
-        for (int i = 0; i < value.length; i++) {
-            for (int j = 0; j < value[i].length; j++) {
-                tmp[counter] = value[i][j];
-                counter++;
-            }
-        }
-        this.value = tmp;
+        this.value = value;
     }
 
     public boolean hasNext() {
-        return value.length > index;
+        boolean result = false;
+        if (indexColumn >= (value.length - 1) && indexRow >= value[indexColumn].length) {
+            result = false;
+        } else if (indexRow < (value[indexColumn].length)) {
+            result = true;
+        } else {
+            indexRow = 0;
+            indexColumn++;
+            if (indexRow > (value[indexColumn].length - 1)) {
+                result = false;
+            } else {
+                result = true;
+            }
+        }
+        return result;
     }
 
     public Integer next() {
-        return value[index++];
+        if (hasNext()) {
+            return value[indexColumn][indexRow++];
+        } else {
+            throw new NoSuchElementException();
+        }
     }
 
     public void remove() {
