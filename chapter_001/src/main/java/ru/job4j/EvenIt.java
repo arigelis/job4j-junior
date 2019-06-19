@@ -13,14 +13,11 @@ public class EvenIt implements Iterator {
 
     @Override
     public boolean hasNext() {
-        return (getNextEven() >= 0 && value.length > index);
-    }
-
-    private int getNextEven() {
-        int result = -1;
+        boolean result = false;
         for (int i = index; i < value.length; i++) {
             if (value[i] % 2 == 0) {
-                result = i;
+                index = i;
+                result = true;
                 break;
             }
         }
@@ -29,8 +26,7 @@ public class EvenIt implements Iterator {
 
     @Override
     public Object next() {
-        index = getNextEven();
-        if (index == -1) {
+        if (!hasNext()) {
             throw new NoSuchElementException();
         }
         return value[index++];

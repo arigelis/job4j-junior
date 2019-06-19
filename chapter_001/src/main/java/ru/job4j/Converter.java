@@ -16,7 +16,7 @@ public class Converter {
             @Override
             public Integer next() {
                 for (Iterator<Iterator<Integer>> it1 = it; it1.hasNext(); ) {
-                    Iterator iterator = it1.next();
+                        Iterator iterator = it1.next();
                     for (Iterator it2 = iterator; it2.hasNext(); ) {
 //                        Iterator ite12 = it2.next();
 
