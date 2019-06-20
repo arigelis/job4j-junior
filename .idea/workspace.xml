@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be05fcf4-77eb-4cf6-af9f-e766734100bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/Converter.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/Converter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/SimpleArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/SimpleArrayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,39 +19,40 @@
     <session id="909720415">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.58" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.99" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="iml" value="2" />
-          <entry key="java" value="37" />
+          <entry key="java" value="41" />
           <entry key="xml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="37" />
+          <entry key="JAVA" value="41" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2487" />
+          <entry key="java" value="3521" />
           <entry key="xml" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2487" />
+          <entry key="JAVA" value="3521" />
           <entry key="XML" value="26" />
         </counts>
       </usages-collector>
@@ -57,11 +60,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/Converter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="314">
+              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,28 +73,61 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/IteratorOfIteratorsTest.java">
+        <entry file="file://$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/JaggedArrayIteratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="83" column="36" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
+            <state relative-caret-position="148">
+              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#301#302#0" expanded="true" />
+                <element signature="e#376#377#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+        <entry file="file://$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/SimpleArray.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="168">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#199#200#0" expanded="true" />
+                <element signature="e#250#251#0" expanded="true" />
+                <element signature="e#474#475#0" expanded="true" />
+                <element signature="e#513#514#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/SimpleArrayTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#233#234#0" expanded="true" />
+                <element signature="e#281#282#0" expanded="true" />
+                <element signature="e#526#527#0" expanded="true" />
+                <element signature="e#552#553#0" expanded="true" />
+                <element signature="e#700#701#0" expanded="true" />
+                <element signature="e#757#758#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/statements/InvokeMethod.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="108">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
+              <folding>
+                <element signature="e#1657#1658#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,8 +137,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Arquillian JUnit Test Class" />
         <option value="Class" />
+        <option value="Arquillian JUnit Test Class" />
       </list>
     </option>
   </component>
@@ -142,6 +178,8 @@
         <option value="$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/JaggerArrayIterator.java" />
         <option value="$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/EvenIt.java" />
         <option value="$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/Converter.java" />
+        <option value="$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/SimpleArray.java" />
+        <option value="$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/SimpleArrayTest.java" />
       </list>
     </option>
   </component>
@@ -178,8 +216,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,6 +286,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -261,7 +299,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560969154775" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561055428743" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/chapter_001/src/main/java" />
@@ -276,17 +314,17 @@
       <recent name="ru.job4j" />
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java\job4j_projects\job4j_junior\chapter_001\src\main\java" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Java\job4j_projects\job4j_junior" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Java\job4j_projects\job4j_junior\chapter_001\src\main\java" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\job4j_projects\job4j_junior" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -301,7 +339,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.IteratorOfIteratorsTest.hasNextShouldReturnFalseInCaseOfEmptyIterators">
+  <component name="RunManager" selected="JUnit.SimpleArrayTest.set">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -314,7 +352,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EvenIteratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JaggedArrayIteratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chapter_001" />
       <extension name="coverage">
         <pattern>
@@ -323,13 +361,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.job4j" />
-      <option name="MAIN_CLASS_NAME" value="ru.job4j.EvenIteratorTest" />
+      <option name="MAIN_CLASS_NAME" value="ru.job4j.JaggedArrayIteratorTest" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EvenIteratorTest.shouldReturnEvenNumbersSequentially" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SimpleArrayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chapter_001" />
       <extension name="coverage">
         <pattern>
@@ -338,15 +376,30 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.job4j" />
-      <option name="MAIN_CLASS_NAME" value="ru.job4j.EvenIteratorTest" />
-      <option name="METHOD_NAME" value="shouldReturnEvenNumbersSequentially" />
+      <option name="MAIN_CLASS_NAME" value="ru.job4j.SimpleArrayTest" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleArrayTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chapter_001" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.job4j.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.job4j" />
+      <option name="MAIN_CLASS_NAME" value="ru.job4j.SimpleArrayTest" />
+      <option name="METHOD_NAME" value="add" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IteratorOfIteratorsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SimpleArrayTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chapter_001" />
       <extension name="coverage">
         <pattern>
@@ -355,30 +408,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.job4j" />
-      <option name="MAIN_CLASS_NAME" value="ru.job4j.IteratorOfIteratorsTest" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IteratorOfIteratorsTest.hasNextShouldReturnFalseInCaseOfEmptyIterators" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="chapter_001" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.job4j.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.job4j" />
-      <option name="MAIN_CLASS_NAME" value="ru.job4j.IteratorOfIteratorsTest" />
-      <option name="METHOD_NAME" value="hasNextShouldReturnFalseInCaseOfEmptyIterators" />
+      <option name="MAIN_CLASS_NAME" value="ru.job4j.SimpleArrayTest" />
+      <option name="METHOD_NAME" value="get" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IteratorOfIteratorsTest.testsThatNextMethodDoesntDependsOnPriorHasNextInvocation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SimpleArrayTest.set" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chapter_001" />
       <extension name="coverage">
         <pattern>
@@ -387,8 +425,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.job4j" />
-      <option name="MAIN_CLASS_NAME" value="ru.job4j.IteratorOfIteratorsTest" />
-      <option name="METHOD_NAME" value="testsThatNextMethodDoesntDependsOnPriorHasNextInvocation" />
+      <option name="MAIN_CLASS_NAME" value="ru.job4j.SimpleArrayTest" />
+      <option name="METHOD_NAME" value="set" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -419,19 +457,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.EvenIteratorTest" />
-      <item itemvalue="JUnit.EvenIteratorTest.shouldReturnEvenNumbersSequentially" />
-      <item itemvalue="JUnit.IteratorOfIteratorsTest.testsThatNextMethodDoesntDependsOnPriorHasNextInvocation" />
-      <item itemvalue="JUnit.IteratorOfIteratorsTest" />
-      <item itemvalue="JUnit.IteratorOfIteratorsTest.hasNextShouldReturnFalseInCaseOfEmptyIterators" />
+      <item itemvalue="JUnit.JaggedArrayIteratorTest" />
+      <item itemvalue="JUnit.SimpleArrayTest.set" />
+      <item itemvalue="JUnit.SimpleArrayTest" />
+      <item itemvalue="JUnit.SimpleArrayTest.get" />
+      <item itemvalue="JUnit.SimpleArrayTest.add" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.IteratorOfIteratorsTest.hasNextShouldReturnFalseInCaseOfEmptyIterators" />
-        <item itemvalue="JUnit.IteratorOfIteratorsTest" />
-        <item itemvalue="JUnit.IteratorOfIteratorsTest.testsThatNextMethodDoesntDependsOnPriorHasNextInvocation" />
-        <item itemvalue="JUnit.EvenIteratorTest" />
-        <item itemvalue="JUnit.EvenIteratorTest.shouldReturnEvenNumbersSequentially" />
+        <item itemvalue="JUnit.SimpleArrayTest.set" />
+        <item itemvalue="JUnit.SimpleArrayTest.add" />
+        <item itemvalue="JUnit.SimpleArrayTest.get" />
+        <item itemvalue="JUnit.SimpleArrayTest" />
+        <item itemvalue="JUnit.JaggedArrayIteratorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -449,32 +487,12 @@
       <workItem from="1560448482951" duration="552000" />
       <workItem from="1560449060426" duration="741000" />
       <workItem from="1560791459972" duration="3660000" />
-      <workItem from="1560872659683" duration="15711000" />
+      <workItem from="1560872659683" duration="16011000" />
+      <workItem from="1561050130020" duration="3608000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IteratorOfIteratorsTest_testsThatNextMethodDoesntDependsOnPriorHasNextInvocation - 2019.06.19 at 23h 21m 14s.xml">
-      <configuration name="IteratorOfIteratorsTest.testsThatNextMethodDoesntDependsOnPriorHasNextInvocation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IteratorOfIteratorsTest_testsThatNextMethodDoesntDependsOnPriorHasNextInvocation - 2019.06.19 at 23h 21m 55s.xml">
-      <configuration name="IteratorOfIteratorsTest.testsThatNextMethodDoesntDependsOnPriorHasNextInvocation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IteratorOfIteratorsTest_testsThatNextMethodDoesntDependsOnPriorHasNextInvocation - 2019.06.19 at 23h 22m 23s.xml">
-      <configuration name="IteratorOfIteratorsTest.testsThatNextMethodDoesntDependsOnPriorHasNextInvocation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IteratorOfIteratorsTest_testsThatNextMethodDoesntDependsOnPriorHasNextInvocation - 2019.06.19 at 23h 22m 46s.xml">
-      <configuration name="IteratorOfIteratorsTest.testsThatNextMethodDoesntDependsOnPriorHasNextInvocation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IteratorOfIteratorsTest_testsThatNextMethodDoesntDependsOnPriorHasNextInvocation - 2019.06.19 at 23h 22m 57s.xml">
-      <configuration name="IteratorOfIteratorsTest.testsThatNextMethodDoesntDependsOnPriorHasNextInvocation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IteratorOfIteratorsTest_testsThatNextMethodDoesntDependsOnPriorHasNextInvocation - 2019.06.19 at 23h 25m 27s.xml">
-      <configuration name="IteratorOfIteratorsTest.testsThatNextMethodDoesntDependsOnPriorHasNextInvocation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IteratorOfIteratorsTest_testsThatNextMethodDoesntDependsOnPriorHasNextInvocation - 2019.06.19 at 23h 26m 06s.xml">
-      <configuration name="IteratorOfIteratorsTest.testsThatNextMethodDoesntDependsOnPriorHasNextInvocation" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="IteratorOfIteratorsTest - 2019.06.19 at 23h 26m 17s.xml">
       <configuration name="IteratorOfIteratorsTest" configurationId="JUnit" />
     </history-entry>
@@ -484,15 +502,36 @@
     <history-entry file="IteratorOfIteratorsTest_hasNextShouldReturnFalseInCaseOfEmptyIterators - 2019.06.19 at 23h 32m 14s.xml">
       <configuration name="IteratorOfIteratorsTest.hasNextShouldReturnFalseInCaseOfEmptyIterators" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="JaggedArrayIteratorTest - 2019.06.20 at 22h 05m 04s.xml">
+      <configuration name="JaggedArrayIteratorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleArrayTest_set - 2019.06.20 at 23h 17m 25s.xml">
+      <configuration name="SimpleArrayTest.set" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleArrayTest_set - 2019.06.20 at 23h 17m 52s.xml">
+      <configuration name="SimpleArrayTest.set" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleArrayTest - 2019.06.20 at 23h 19m 17s.xml">
+      <configuration name="SimpleArrayTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleArrayTest_get - 2019.06.20 at 23h 28m 46s.xml">
+      <configuration name="SimpleArrayTest.get" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleArrayTest_add - 2019.06.20 at 23h 29m 43s.xml">
+      <configuration name="SimpleArrayTest.add" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleArrayTest_set - 2019.06.20 at 23h 30m 26s.xml">
+      <configuration name="SimpleArrayTest.set" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21850000" />
+    <option name="totallyTimeSpent" value="25758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2647504" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2647504" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -501,7 +540,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32935154" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32935154" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993174" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -569,6 +608,30 @@
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/SimpleArrayTest.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/SimpleArrayTest.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/SimpleArrayTest.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/SimpleArrayTest.java</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -577,6 +640,21 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>simpleArray</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>iterator</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>simpleArray.get(0)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>tmp</expression-string>
         <language-id>JAVA</language-id>
@@ -604,22 +682,6 @@
       </expression>
       <expression>
         <expression-string>it1</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>((Arrays.ArrayItr) it).a</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>java.util.Arrays</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>it</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>it[0]</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -674,18 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/JaggedArrayIteratorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#301#302#0" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/EvenIt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -706,6 +756,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/tools/jdk-11.0.2/lib/src.zip!/java.base/java/util/Iterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/Converter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -715,15 +782,8 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/statements/InvokeMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/tools/jdk-11.0.2/lib/src.zip!/java.base/java/util/Iterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+        <state relative-caret-position="187">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -734,12 +794,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/Converter.java">
+    <entry file="file://$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/JaggedArrayIteratorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="148">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#1657#1658#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/SimpleArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#199#200#0" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/SimpleArrayTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#281#282#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#552#553#0" expanded="true" />
+            <element signature="e#700#701#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
           </folding>
         </state>
       </provider>
