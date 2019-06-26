@@ -5,7 +5,6 @@ import java.util.NoSuchElementException;
 
 public class Converter {
     Iterator indexIt;
-    int index = 0;
 
     Iterator<Integer> convert(Iterator<Iterator<Integer>> it) {
         indexIt = it.next();
@@ -17,7 +16,6 @@ public class Converter {
                     result = true;
                 } else if (it.hasNext()) {
                     indexIt = it.next();
-                    index = 0;
                     result = true;
                 } else {
                     result = false;
@@ -27,21 +25,27 @@ public class Converter {
 
             @Override
             public Integer next() {
-                if (indexIt.hasNext()) {
-                    Integer result = 0;
-                    for (Iterator it2 = indexIt; it2.hasNext(); ) {
-                        result = (Integer) it2.next();
-                        index++;
-                        break;
-                    }
-                    return result;
-                } else if (it.hasNext()) {
-                    indexIt = it.next();
-                    index = 0;
-                    return (Integer) indexIt.next();
-                } else {
+                if (!hasNext()) {
                     throw new NoSuchElementException();
+                } else {
+                    return (Integer) indexIt.next();
                 }
+//
+//                if (indexIt.hasNext()) {
+//                    Integer result = 0;
+//                    for (Iterator it2 = indexIt; it2.hasNext(); ) {
+//                        result = (Integer) it2.next();
+//                        index++;
+//                        break;
+//                    }
+//                    return result;
+//                } else if (it.hasNext()) {
+//                    indexIt = it.next();
+//                    index = 0;
+//                    return (Integer) indexIt.next();
+//                } else {
+//                    throw new NoSuchElementException();
+//                }
             }
         };
     }
