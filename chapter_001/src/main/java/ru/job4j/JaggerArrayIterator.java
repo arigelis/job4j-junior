@@ -31,11 +31,10 @@ public class JaggerArrayIterator implements Iterator {
     }
 
     public Integer next() {
-        if (hasNext()) {
-            return value[indexColumn][indexRow++];
-        } else {
+        if (!hasNext()) {
             throw new NoSuchElementException();
         }
+        return value[indexColumn][indexRow++];
     }
 
     public void remove() {
