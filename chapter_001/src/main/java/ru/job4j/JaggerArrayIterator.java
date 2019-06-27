@@ -14,18 +14,9 @@ public class JaggerArrayIterator implements Iterator {
 
     public boolean hasNext() {
         boolean result = false;
-        if (indexColumn >= (value.length - 1) && indexRow >= value[indexColumn].length) {
-            result = false;
-        } else if (indexRow < (value[indexColumn].length)) {
+
+        if (indexRow < value.length && indexColumn < value[indexRow].length) {
             result = true;
-        } else {
-            indexRow = 0;
-            indexColumn++;
-            if (indexRow > (value[indexColumn].length - 1)) {
-                result = false;
-            } else {
-                result = true;
-            }
         }
         return result;
     }
@@ -34,7 +25,13 @@ public class JaggerArrayIterator implements Iterator {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        return value[indexColumn][indexRow++];
+
+        int i = value[indexRow][indexColumn++];
+        if (indexColumn == value[indexRow].length) {
+            indexColumn = 0;
+            indexRow++;
+        }
+        return i;
     }
 
     public void remove() {
