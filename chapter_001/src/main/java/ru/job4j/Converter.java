@@ -17,8 +17,6 @@ public class Converter {
                 } else if (it.hasNext()) {
                     indexIt = it.next();
                     result = true;
-                } else {
-                    result = false;
                 }
                 return result;
             }
