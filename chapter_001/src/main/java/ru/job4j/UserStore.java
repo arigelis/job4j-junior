@@ -1,8 +1,11 @@
 package ru.job4j;
 
-public class UserStore implements Store {
+import java.util.Iterator;
 
-    SimpleArray simpleArray;
+public class UserStore extends AbstractStore{
+
+    SimpleArray<User> simpleArray;
+    int index = 0;
 
     @Override
     public void add(Base model) {
@@ -11,17 +14,33 @@ public class UserStore implements Store {
 
     @Override
     public boolean replace(String id, Base model) {
-        return false;
+        boolean result = false;
+        Base modelTmp = findById(id);
+        simpleArray.set(index, model);
+        return result;
     }
 
     @Override
     public boolean delete(String id) {
-//        simpleArray
-        return false;
+        boolean result = false;
+        Base model = findById(id);
+        simpleArray.remove(index);
+        return result;
     }
 
     @Override
     public Base findById(String id) {
-        return null;
+        Iterator iter = simpleArray.iterator();
+        Base result = null;
+        index = 0;
+        while (iter.hasNext()) {
+            Base it = (Base) iter.next();
+            if (it.getId().equalsIgnoreCase(id)) {
+                result = it;
+                break;
+            }
+            index++;
+        }
+        return result;
     }
 }

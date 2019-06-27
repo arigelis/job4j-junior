@@ -7,6 +7,10 @@ public class SimpleArray<T> implements Iterable {
     private T[] tmp;
     int indexArr;
 
+    public int getSize() {
+        return indexArr;
+    }
+
     public SimpleArray(int arrayLength) {
         tmp = (T[]) new Object[arrayLength];
     }

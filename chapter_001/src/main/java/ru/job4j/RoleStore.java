@@ -1,26 +1,46 @@
 package ru.job4j;
 
-public class RoleStore implements Store {
+import java.util.Iterator;
 
-    SimpleArray simpleArray;
+public class RoleStore extends AbstractStore {
+
+    SimpleArray<Role> simpleArray;
+    int index = 0;
 
     @Override
     public void add(Base model) {
-
+        simpleArray.add(model);
     }
 
     @Override
     public boolean replace(String id, Base model) {
-        return false;
+        boolean result = false;
+        Base modelTmp = findById(id);
+        simpleArray.set(index, model);
+        return result;
     }
 
     @Override
     public boolean delete(String id) {
-        return false;
+        boolean result = false;
+        Base model = findById(id);
+        simpleArray.remove(index);
+        return result;
     }
 
     @Override
     public Base findById(String id) {
-        return null;
+        Iterator iter = simpleArray.iterator();
+        Base result = null;
+        index = 0;
+        while (iter.hasNext()) {
+            Base it = (Base) iter.next();
+            if (it.getId().equalsIgnoreCase(id)) {
+                result = it;
+                break;
+            }
+            index++;
+        }
+        return result;
     }
 }
