@@ -11,14 +11,12 @@ public class Converter {
         return new Iterator<Integer>() {
             @Override
             public boolean hasNext() {
-                boolean result = false;
-                if (indexIt.hasNext()) {
-                    result = true;
-                } else if (it.hasNext()) {
-                    indexIt = it.next();
-                    result = true;
+                if (!indexIt.hasNext()) {  // если текущий не содержит элементов запустим цикл
+                    while (it.hasNext() && !indexIt.hasNext()) { // пока в итераторе итераторов есть итераторы и у текущего нет элементов
+                        indexIt = it.next(); // будем присваивать текущему новый итератор из итератора итераторов
+                    }
                 }
-                return result;
+                return indexIt.hasNext(); //возвращаем есть ли элементы в итераторе
             }
 
             @Override
