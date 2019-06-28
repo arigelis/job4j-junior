@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class SimpleArray<T> implements Iterable {
     private T[] tmp;
-    int indexArr;
+    private int indexArr;
 
     public int getSize() {
         return indexArr;
@@ -33,6 +33,8 @@ public class SimpleArray<T> implements Iterable {
         boolean result = false;
         if (index < indexArr) {
             System.arraycopy(tmp, index, tmp, indexArr, tmp.length - 1);
+            indexArr--;
+            result = true;
         }
 
 
@@ -49,6 +51,8 @@ public class SimpleArray<T> implements Iterable {
 
     @Override
     public Iterator iterator() {
-        return Arrays.stream(tmp).iterator();
+        T[] arrayForIterator = (T[]) new Object[indexArr];
+        System.arraycopy(tmp, 0, arrayForIterator, 0, indexArr);
+        return Arrays.stream(arrayForIterator).iterator();
     }
 }
