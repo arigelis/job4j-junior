@@ -2,21 +2,38 @@ package ru.job4j;
 
 import java.util.Iterator;
 
-public class RoleStore extends AbstractStore {
+public class RoleStore implements Store<Role> {//extends AbstractStore {
 
-    SimpleArray<Role> simpleArray;
-    int index = 0;
+    private SimpleArray<Role> simpleArray;
+    private int index = 0;
+
+//    @Override
+//    public void add(Base model) {
+//        simpleArray.add(model);
+//    }
+//
+//    @Override
+//    public boolean replace(String id, Base model) {
+//        boolean result = false;
+//        Base modelTmp = findById(id);
+//        simpleArray.set(index, model);
+//        return result;
+//    }
 
     @Override
-    public void add(Base model) {
-        simpleArray.add(model);
+    public void add(Role model) {
+        if (index > 0) {
+            simpleArray.add(model);
+        }
     }
 
     @Override
-    public boolean replace(String id, Base model) {
+    public boolean replace(String id, Role model) {
         boolean result = false;
-        Base modelTmp = findById(id);
-        simpleArray.set(index, model);
+        Base modelTmp = (Base) findById(id);
+        if (index > 0) {
+            simpleArray.set(index, model);
+        }
         return result;
     }
 
@@ -24,22 +41,27 @@ public class RoleStore extends AbstractStore {
     public boolean delete(String id) {
         boolean result = false;
         Base model = findById(id);
-        simpleArray.remove(index);
+        if (index > 0) {
+            simpleArray.remove(index);
+        }
         return result;
     }
 
     @Override
-    public Base findById(String id) {
+    public Role findById(String id) {
         Iterator iter = simpleArray.iterator();
-        Base result = null;
+        Role result = null;
         index = 0;
         while (iter.hasNext()) {
-            Base it = (Base) iter.next();
+            Role it = (Role) iter.next();
             if (it.getId().equalsIgnoreCase(id)) {
                 result = it;
                 break;
             }
             index++;
+        }
+        if (result == null) {
+            index = -1;
         }
         return result;
     }

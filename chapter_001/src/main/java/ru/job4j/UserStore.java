@@ -2,21 +2,38 @@ package ru.job4j;
 
 import java.util.Iterator;
 
-public class UserStore extends AbstractStore{
+public class UserStore implements Store<User> {//extends AbstractStore{
 
-    SimpleArray<User> simpleArray;
-    int index = 0;
+    private SimpleArray<User> simpleArray;
+    private int index = 0;
+
+//    @Override
+//    public void add(Base model) {
+//        simpleArray.add(model);
+//    }
+//
+//    @Override
+//    public boolean replace(String id, Base model) {
+//        boolean result = false;
+//        Base modelTmp = findById(id);
+//        simpleArray.set(index, model);
+//        return result;
+//    }
 
     @Override
-    public void add(Base model) {
-        simpleArray.add(model);
+    public void add(User model) {
+        if (index > 0) {
+            simpleArray.add(model);
+        }
     }
 
     @Override
-    public boolean replace(String id, Base model) {
+    public boolean replace(String id, User model) {
         boolean result = false;
         Base modelTmp = findById(id);
-        simpleArray.set(index, model);
+        if (index > 0) {
+            simpleArray.set(index, model);
+        }
         return result;
     }
 
@@ -24,22 +41,27 @@ public class UserStore extends AbstractStore{
     public boolean delete(String id) {
         boolean result = false;
         Base model = findById(id);
-        simpleArray.remove(index);
+        if (index > 0) {
+            simpleArray.remove(index);
+        }
         return result;
     }
 
     @Override
-    public Base findById(String id) {
+    public User findById(String id) {
         Iterator iter = simpleArray.iterator();
-        Base result = null;
+        User result = null;
         index = 0;
         while (iter.hasNext()) {
-            Base it = (Base) iter.next();
+            User it = (User) iter.next();
             if (it.getId().equalsIgnoreCase(id)) {
                 result = it;
                 break;
             }
             index++;
+        }
+        if (result == null) {
+            index = -1;
         }
         return result;
     }
