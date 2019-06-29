@@ -1,7 +1,5 @@
 package ru.job4j;
 
-import java.util.Iterator;
-
 public class RoleStore implements Store<Role> {//extends AbstractStore {
 
     private SimpleArray<Role> simpleArray;
@@ -47,21 +45,25 @@ public class RoleStore implements Store<Role> {//extends AbstractStore {
         return result;
     }
 
-    @Override
-    public Role findById(String id) {
-        Iterator iter = simpleArray.iterator();
-        Role result = null;
-        index = 0;
-        while (iter.hasNext()) {
-            Role it = (Role) iter.next();
-            if (it.getId().equalsIgnoreCase(id)) {
-                result = it;
+    public int getIndex(String id) {
+        int res = -1;
+        int index = 0;
+        for (Role role : simpleArray) {
+            if (role.getId().equalsIgnoreCase(id)) {
+                res = index;
                 break;
             }
             index++;
         }
-        if (result == null) {
-            index = -1;
+        return res;
+    }
+
+    @Override
+    public Role findById(String id) {
+        Role result = null;
+        int index = getIndex(id);
+        if (index != -1) {
+            result = simpleArray.get(index);
         }
         return result;
     }

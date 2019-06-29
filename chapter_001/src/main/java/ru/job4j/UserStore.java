@@ -1,7 +1,5 @@
 package ru.job4j;
 
-import java.util.Iterator;
-
 public class UserStore implements Store<User> {//extends AbstractStore{
 
     private SimpleArray<User> simpleArray;
@@ -47,21 +45,26 @@ public class UserStore implements Store<User> {//extends AbstractStore{
         return result;
     }
 
-    @Override
-    public User findById(String id) {
-        Iterator iter = simpleArray.iterator();
-        User result = null;
-        index = 0;
-        while (iter.hasNext()) {
-            User it = (User) iter.next();
-            if (it.getId().equalsIgnoreCase(id)) {
-                result = it;
+
+    public int getIndex(String id) {
+        int res = -1;
+        int index = 0;
+        for (User user : simpleArray) {
+            if (user.getId().equalsIgnoreCase(id)) {
+                res = index;
                 break;
             }
             index++;
         }
-        if (result == null) {
-            index = -1;
+        return res;
+    }
+
+    @Override
+    public User findById(String id) {
+        User result = null;
+        int index = getIndex(id);
+        if (index != -1) {
+            result = simpleArray.get(index);
         }
         return result;
     }

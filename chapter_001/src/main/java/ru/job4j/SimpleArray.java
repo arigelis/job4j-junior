@@ -1,9 +1,8 @@
 package ru.job4j;
 
-import java.util.Arrays;
 import java.util.Iterator;
 
-public class SimpleArray<T> implements Iterable {
+public class SimpleArray<T> implements Iterable<T> {
     private T[] tmp;
     private int indexArr;
 
@@ -50,9 +49,23 @@ public class SimpleArray<T> implements Iterable {
     }
 
     @Override
-    public Iterator iterator() {
-        T[] arrayForIterator = (T[]) new Object[indexArr];
-        System.arraycopy(tmp, 0, arrayForIterator, 0, indexArr);
-        return Arrays.stream(arrayForIterator).iterator();
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            int pos = 0;
+
+            @Override
+            public boolean hasNext() {
+                return pos < indexArr;
+            }
+
+            @Override
+            public T next() {
+                return tmp[pos++];
+            }
+        };
+
+//        T[] arrayForIterator = (T[]) new Object[indexArr];
+//        System.arraycopy(tmp, 0, arrayForIterator, 0, indexArr);
+//        return Arrays.stream(arrayForIterator).iterator();
     }
 }
