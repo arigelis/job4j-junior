@@ -3,8 +3,7 @@ package ru.job4j;
 public class RoleStore implements Store<Role> {//extends AbstractStore {
 
     private SimpleArray<Role> simpleArray;
-    private int index = 0;
-
+//    private int index = 0;
 //    @Override
 //    public void add(Base model) {
 //        simpleArray.add(model);
@@ -20,17 +19,16 @@ public class RoleStore implements Store<Role> {//extends AbstractStore {
 
     @Override
     public void add(Role model) {
-        if (index > 0) {
-            simpleArray.add(model);
-        }
+        simpleArray.add(model);
     }
 
     @Override
     public boolean replace(String id, Role model) {
         boolean result = false;
-        Base modelTmp = (Base) findById(id);
+        int index = getIndex(id);
         if (index > 0) {
             simpleArray.set(index, model);
+            result = true;
         }
         return result;
     }
@@ -38,9 +36,10 @@ public class RoleStore implements Store<Role> {//extends AbstractStore {
     @Override
     public boolean delete(String id) {
         boolean result = false;
-        Base model = findById(id);
+        int index = getIndex(id);
         if (index > 0) {
             simpleArray.remove(index);
+            result = true;
         }
         return result;
     }
