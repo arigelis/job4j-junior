@@ -26,7 +26,7 @@ public class RoleStore implements Store<Role> {//extends AbstractStore {
     public boolean replace(String id, Role model) {
         boolean result = false;
         int index = getIndex(id);
-        if (index > 0) {
+        if (index != -1) {
             simpleArray.set(index, model);
             result = true;
         }
@@ -37,7 +37,7 @@ public class RoleStore implements Store<Role> {//extends AbstractStore {
     public boolean delete(String id) {
         boolean result = false;
         int index = getIndex(id);
-        if (index > 0) {
+        if (index != -1) {
             simpleArray.remove(index);
             result = true;
         }
