@@ -1,8 +1,6 @@
 package ru.job4j.List;
 
 
-import ru.job4j.SimpleArray;
-
 import java.util.Iterator;
 
 public class LinkedDynamicArray<E> implements Iterable<E> {
@@ -12,9 +10,9 @@ public class LinkedDynamicArray<E> implements Iterable<E> {
 
     private void grow() {
         modCount++;
-        SimpleArrayList<Node> tmp = new DynamicArray<SimpleArrayList<Node>>();
-        System.arraycopy(container, 0, tmp, 0, container.getSize());
-        container = tmp;
+//        SimpleArrayList<Node> tmp = new DynamicArray<SimpleArrayList<Node>>();
+//        System.arraycopy(container, 0, tmp, 0, container.getSize());
+//        container = tmp;
     }
 
     @Override
