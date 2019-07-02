@@ -4,6 +4,7 @@ public class UserStore extends AbstractStore implements Store<User> {//extends A
 
     private SimpleArray<User> simpleArray;
 
+
     @Override
     public void add(User model) {
         simpleArray.add(model);
