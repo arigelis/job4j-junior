@@ -8,6 +8,10 @@ public class DynamicArray<E> implements Iterable<E> {
     private int index = 0;
     public int modCount = 0;
 
+    public int getSize() {
+        return container.length;
+    }
+
     public void add(E value) {
         if (index < container.length) {
             container[index++] = value;
