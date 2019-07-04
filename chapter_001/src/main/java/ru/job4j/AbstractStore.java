@@ -1,11 +1,51 @@
 package ru.job4j;
 
-public abstract class AbstractStore <T extends Base> implements Store<T>{
-    public abstract void add(T model);
+public abstract class AbstractStore<T extends Base> implements Store<T> {
+    private SimpleArray<T> simpleArray;
 
-    public abstract boolean replace(String id, T model);
+    public void add(T model) {
+        simpleArray.add(model);
+    }
 
-    public abstract boolean delete(String id);
+    public boolean replace(String id, T model) {
+        boolean result = false;
+        int index = getIndex(id);
+        if (index != -1) {
+            simpleArray.set(index, model);
+            result = true;
+        }
+        return result;
+    }
 
-    public abstract T findById(String id);
+    public boolean delete(String id) {
+        boolean result = false;
+        int index = getIndex(id);
+        if (index != -1) {
+            simpleArray.remove(index);
+            result = true;
+        }
+        return result;
+    }
+
+    public T findById(String id) {
+        T result = null;
+        int index = getIndex(id);
+        if (index != -1) {
+            result = simpleArray.get(index);
+        }
+        return result;
+    }
+
+    public int getIndex(String id) {
+        int res = -1;
+        int index = 0;
+        for (T model : simpleArray) {
+            if (model.getId().equalsIgnoreCase(id)) {
+                res = index;
+                break;
+            }
+            index++;
+        }
+        return res;
+    }
 }
