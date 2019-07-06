@@ -3,6 +3,15 @@ package ru.job4j;
 public abstract class AbstractStore<T extends Base> implements Store<T> {
     private SimpleArray<T> simpleArray;
 
+    public AbstractStore(SimpleArray<T> simpleArray) {
+        this.simpleArray = simpleArray;
+    }
+
+
+    public AbstractStore() {
+        this.simpleArray = new SimpleArray<T>(10);
+    }
+
     public void add(T model) {
         simpleArray.add(model);
     }
