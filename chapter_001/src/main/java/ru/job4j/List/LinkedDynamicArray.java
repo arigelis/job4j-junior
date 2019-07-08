@@ -4,51 +4,54 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 
 public class LinkedDynamicArray<E> implements Iterable<E> {
-    private Node[] container = new Node[10];
-    private int index = 0;
     public int modCount = 0;
     private Node<E> first;
-
-    public int getSize() {
-        return container.length;
-    }
+    private Node<E> last;
 
     public void add(E value) {
-        if (index == 0) {
+        if (first == null) {
             first = new Node<>(value);
             first.previous = null;
-            index++;
+            last = first;
         } else {
-            if (index >= container.length) {
-                grow();//увеличиваем размер контейнера
-            }
             Node<E> tmp = new Node<>(value);
-            container[index - 1].next = tmp;//Добавляем "следующий" для предыдущего элемента в стэке
-            tmp.previous = container[index - 1];//Добавляем "предыдущий" элемент для текущего в стэке
-            container[index++] = tmp;
+            tmp.previous = last;
+            last = tmp;
         }
     }
 
     public E get(int index) {
-        return (E) container[index];
-    }
+        if (first == null) {
+            return null;
+        }
 
-    private void grow() {
-        modCount++;
-        Node[] tmp = new Node[container.length * 2 + 1];
-        System.arraycopy(container, 0, tmp, 0, container.length);
-        container = tmp;
+        Node<E> result = null;
+        Node<E> tmp = first;
+
+        int counter = 0;
+        while (result == null) {
+            if (tmp.next != null) {
+                if (counter == index) {
+                    result = tmp;
+                } else {
+                    counter++;
+                    tmp = tmp.next;
+                }
+            } else {
+                break;
+            }
+        }
+        return (E) result;
     }
 
     @Override
     public Iterator<E> iterator() {
         return new Iterator<E>() {
-            int pos = 0;
             int expectedModCount = modCount;
 
             @Override
             public boolean hasNext() {
-                return pos < container.length;
+                return true;
             }
 
             @Override
@@ -56,7 +59,7 @@ public class LinkedDynamicArray<E> implements Iterable<E> {
                 if (modCount != expectedModCount) {
                     throw new ConcurrentModificationException();
                 }
-                return (E) container[pos++];
+                return (E) null;
             }
         };
     }
