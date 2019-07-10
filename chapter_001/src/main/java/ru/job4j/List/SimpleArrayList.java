@@ -1,7 +1,7 @@
 package ru.job4j.List;
 
 /**
- * Класс SimpleArrayList.
+ * Класс SimpleArray List.
  */
 public class SimpleArrayList<E> {
 
