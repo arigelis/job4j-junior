@@ -21,7 +21,7 @@ public class DynamicArray<E> implements Iterable<E> {
         }
     }
 
-    public E get(int index) {
+    public E get(int index) throws ClassNotFoundException {
         return (E) container[index];
     }
 
