@@ -19,6 +19,7 @@ public class LinkedDynamicArray<E> implements Iterable<E> {
             tmp.previous = last;
             last = tmp;
         }
+        modCount++;
         arraySize++;
     }
 
@@ -48,10 +49,10 @@ public class LinkedDynamicArray<E> implements Iterable<E> {
 
     @Override
     public Iterator<E> iterator() {
-        int count = 0;
         Node<E> tmp = first;
         return new Iterator<E>() {
             int expectedModCount = modCount;
+            int count = 0;
 
             @Override
             public boolean hasNext() {
@@ -63,6 +64,7 @@ public class LinkedDynamicArray<E> implements Iterable<E> {
                 if (modCount != expectedModCount) {
                     throw new ConcurrentModificationException();
                 }
+                count++;
                 return (E) tmp.next;
             }
         };
