@@ -4,25 +4,52 @@ import ru.job4j.List.DynamicArray;
 
 import java.util.Iterator;
 
-public class SimpleSet<E> extends DynamicArray<E> {
+public class SimpleSet<E> {
     private int index = 0;
+    DynamicArray<E> a = new DynamicArray<>();
 
-    @Override
     public E get(int i) throws ClassNotFoundException {
         throw new ClassNotFoundException();//кидаю exception т.к метод по сути  запрещён  в текущей реализации.
     }
 
-    @Override
     public void add(E value) {
         boolean dup = false;
-        Iterator<E> iterator = super.iterator();
+        Iterator<E> iterator = a.iterator();
+
         while (iterator.hasNext()) {
-            if (value.equals(iterator)) {
-                dup = true;
-                break;
+            if (value != null) {
+                if (value.equals(iterator.next())) {
+                    dup = true;
+                    break;
+                }
+            } else {
+                if (value == iterator.next()) {
+                    dup = true;
+                    break;
+                }
             }
         }
-        if (!dup)
-            super.add(value);
+        if (!dup) {
+            a.add(value);
+            index++;
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder tmp = new StringBuilder();
+        Iterator tmpIterator = a.iterator();
+        for (int i = 0; i <= index; i++) {
+            E a = (E) tmpIterator.next();
+            if (a != null) {
+                tmp.append(a.toString());
+            } else {
+                tmp.append("null");
+            }
+            if (i != index) {
+                tmp.append(",");
+            }
+        }
+        return tmp.toString();
     }
 }
