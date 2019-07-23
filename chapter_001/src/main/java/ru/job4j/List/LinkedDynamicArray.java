@@ -64,8 +64,12 @@ public class LinkedDynamicArray<E> implements Iterable<E> {
                 if (modCount != expectedModCount) {
                     throw new ConcurrentModificationException();
                 }
+                E result = (E) tmp.next;
+                if (result == null) {
+                    throw new IndexOutOfBoundsException();
+                }
                 count++;
-                return (E) tmp.next;
+                return result;
             }
         };
     }
