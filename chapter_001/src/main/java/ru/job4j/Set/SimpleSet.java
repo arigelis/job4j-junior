@@ -17,16 +17,9 @@ public class SimpleSet<E> {
         Iterator<E> iterator = a.iterator();
 
         while (iterator.hasNext()) {
-            if (value != null) {
-                if (value.equals(iterator.next())) {
-                    dup = true;
-                    break;
-                }
-            } else {
-                if (value == iterator.next()) {
-                    dup = true;
-                    break;
-                }
+            if (value == iterator.next()) {
+                dup = true;
+                break;
             }
         }
         if (!dup) {
