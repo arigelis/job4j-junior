@@ -2,6 +2,7 @@ package ru.job4j.List;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class LinkedDynamicArray<E> implements Iterable<E> {
     public int modCount = 0;
@@ -61,13 +62,14 @@ public class LinkedDynamicArray<E> implements Iterable<E> {
 
             @Override
             public E next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
                 if (modCount != expectedModCount) {
                     throw new ConcurrentModificationException();
                 }
                 E result = (E) tmp.next;
-                if (result == null) {
-                    throw new IndexOutOfBoundsException();
-                }
+
                 count++;
                 return result;
             }
