@@ -12,17 +12,21 @@ public class SimpleSet<E> {
         throw new ClassNotFoundException();//кидаю exception т.к метод по сути  запрещён  в текущей реализации.
     }
 
-    public void add(E value) {
-        boolean dup = false;
+    boolean findDup(E value) {
         Iterator<E> iterator = a.iterator();
+        boolean result = false;
 
         while (iterator.hasNext()) {
-            if (value == iterator.next()) {
-                dup = true;
+            if (value != null && value.equals(iterator.next())) {
+                result = true;
                 break;
             }
         }
-        if (!dup) {
+        return result;
+    }
+
+    public void add(E value) {
+        if (!findDup(value)) {
             a.add(value);
             index++;
         }
