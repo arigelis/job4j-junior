@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
-import static org.testng.Assert.*;
 
 public class SimpleSetTest {
 
@@ -15,6 +14,7 @@ public class SimpleSetTest {
         simpleSet.add(null);
         simpleSet.add(2);
         simpleSet.add(1);
-        assertThat(simpleSet.toString(), is("1,2,null"));
+        simpleSet.add(null);
+        assertThat(simpleSet.toString(), is("1,null,2"));
     }
 }

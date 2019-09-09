@@ -20,6 +20,11 @@ public class SimpleSet<E> {
             if (value != null && value.equals(iterator.next())) {
                 result = true;
                 break;
+            } else {
+                if (value == null && iterator.next() == null) {
+                    result = true;
+                    break;
+                }
             }
         }
         return result;
