@@ -10,7 +10,7 @@ public class SimpleStack<T> extends LinkedDynamicArray {
         while (iterator.hasNext()) {
             result = (T) iterator.next();
         }
-        super.remove(result / index);
+//        super.remove(result / index);
         return result;
     }
 
