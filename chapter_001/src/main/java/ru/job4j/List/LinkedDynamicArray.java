@@ -10,6 +10,18 @@ public class LinkedDynamicArray<E> implements Iterable<E> {
     private Node<E> last;
     private int arraySize;
 
+    public E deleteFirst() {
+        E tmp = (E) first;
+        first = first.next;
+        return tmp;
+    }
+
+    public E deleteLast() {
+        E tmp = (E) last;
+        last = last.previous;
+        return tmp;
+    }
+
     public void add(E value) {
         if (first == null) {
             first = new Node<>(value);

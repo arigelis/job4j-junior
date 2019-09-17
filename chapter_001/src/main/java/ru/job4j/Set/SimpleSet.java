@@ -11,7 +11,7 @@ public class SimpleSet<E> {
         boolean result = false;
         Iterator iter = list.iterator();
         while (iter.hasNext()) {
-            
+
         }
         return result;
     }
