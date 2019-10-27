@@ -1,7 +1,8 @@
 package ru.job4j.List;
 
 public class CyclicLinkedList {
-    private Node firstElement;
+    private Node tortoise;
+    private Node rabbit;
 
     class Node<T> {
         public Node(T value) {
@@ -14,7 +15,8 @@ public class CyclicLinkedList {
 
     public CyclicLinkedList() {
         Node first = new Node(1);
-        firstElement = first;
+        tortoise = first;
+        rabbit = first;
         Node two = new Node(2);
         Node third = new Node(3);
         Node four = new Node(4);
@@ -24,21 +26,18 @@ public class CyclicLinkedList {
         third.next = four;
         four.next = first;
 
-        hasCycle(first);
+        System.out.println("" + hasCycle());
 
     }
 
-    public boolean hasCycle(Node first) {
+    public boolean hasCycle() {
         boolean result = false;
-        while (first.next != null) {
-            if (first.equals(first.next)) {
+        while (rabbit != null && rabbit.next != null) {
+            tortoise = tortoise.next;
+            rabbit = rabbit.next.next;
+            if (tortoise == rabbit) {
                 result = true;
                 break;
-            }
-            if (first.next.equals(firstElement)) {
-                break;
-            } else {
-                first = first.next;
             }
         }
         return result;
