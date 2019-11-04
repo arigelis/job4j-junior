@@ -1,13 +1,18 @@
 package ru.job4j.List;
 
+import org.testng.annotations.Test;
+
 public class SimpleQueue<T> {
-    private LinkedDynamicArray list = new LinkedDynamicArray();
+    private SimpleStack<String> list1 = new SimpleStack<String>();
+    private SimpleStack<String> list2 = new SimpleStack<String>();
 
-    public T poll() {
-        return (T) list.deleteFirst();
-    }
+    public SimpleQueue() {
+        list1.push(new String("1"));
+        list1.push(new String("2"));
+        list1.push(new String("3"));
 
-    public void push(T value) {
-        list.add(value);
+        while (!list1.poll().isEmpty()) {
+            list2.push(list1.poll());
+        }
     }
 }
