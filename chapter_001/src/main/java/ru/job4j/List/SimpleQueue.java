@@ -12,5 +12,6 @@ public class SimpleQueue<T> {
 
     public void push(T value) {
         stackIn.push(value);
+        stackOut.push(stackIn.poll());
     }
 }
