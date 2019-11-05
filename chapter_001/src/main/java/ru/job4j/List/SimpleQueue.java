@@ -7,11 +7,11 @@ public class SimpleQueue<T> {
     private SimpleStack stackOut = new SimpleStack<T>();
 
     public T poll() {
-        return (T) stackOut.poll();
+        return (T) stackOut.pollFirst();
     }
 
     public void push(T value) {
         stackIn.push(value);
-        stackOut.push(stackIn.poll());
+        stackOut.push(stackIn.pollFirst());
     }
 }

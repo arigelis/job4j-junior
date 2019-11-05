@@ -7,6 +7,10 @@ public class SimpleStack<T> {
         return (T) list.deleteLast();
     }
 
+    public T pollFirst() {
+        return (T) list.deleteFirst();
+    }
+
     public void push(T value) {
         list.add(value);
     }
