@@ -39,4 +39,9 @@ public class User {
     public void setBirthady(Calendar birthady) {
         this.birthady = birthady;
     }
+
+    @Override
+    public int hashCode() {
+        return 1;
+    }
 }
