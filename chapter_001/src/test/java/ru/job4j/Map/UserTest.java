@@ -25,7 +25,8 @@ public class UserTest {
         for (Map.Entry<User, Object> user : userObjectMap.entrySet()) {
             System.out.println(user.getValue() + " / " + user.getKey());
         }
-
+        System.out.println(user1 == user2);//оба сравнения идентичны, т.к equals не перегружаем и он просто сравнивает объекты через ==
+        System.out.println(user1.equals(user2));
     }
 
 }
