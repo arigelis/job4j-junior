@@ -42,6 +42,12 @@ public class User {
 
     @Override
     public int hashCode() {
-        return 1;
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + children;
+        result = prime * result + ((birthady == null) ? 0 : birthady.hashCode());
+        return result;
     }
 }
+
