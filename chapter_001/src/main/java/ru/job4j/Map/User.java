@@ -40,15 +40,15 @@ public class User {
         this.birthady = birthady;
     }
 
-//    @Override
-//    public int hashCode() {
-//        final int prime = 31;
-//        int result = 1;
-//        result = prime * result + ((name == null) ? 0 : name.hashCode());
-//        result = prime * result + children;
-//        result = prime * result + ((birthady == null) ? 0 : birthady.hashCode());
-//        return result;
-//    }
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + children;
+        result = prime * result + ((birthady == null) ? 0 : birthady.hashCode());
+        return result;
+    }
 
 
     @Override
