@@ -27,6 +27,7 @@ public class UserTest {
         }
         System.out.println(user1 == user2);//оба сравнения идентичны, т.к equals не перегружаем и он просто сравнивает объекты через ==
         System.out.println(user1.equals(user2));
+        System.out.println(user1.hashCode() == user2.hashCode());
     }
 
 }
