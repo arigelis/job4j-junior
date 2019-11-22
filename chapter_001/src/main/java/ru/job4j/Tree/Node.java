@@ -1,6 +1,5 @@
 package ru.job4j.Tree;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +9,7 @@ import java.util.List;
  * @since 0.1
  */
 public class Node<E extends Comparable<E>> {
-    public final List<Node<E>> children = new ArrayList<>();
+    private final List<Node<E>> children = new ArrayList<>();
     private final E value;
 
     public Node(final E value) {

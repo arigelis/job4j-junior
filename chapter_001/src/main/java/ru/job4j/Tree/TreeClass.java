@@ -12,11 +12,11 @@ public class TreeClass implements SimpleTree {
     }
 
     @Override
-    public boolean add(Comparable parent, Comparable child) {
+    public boolean add(E parent, E child) {
         Optional<Node> tmp = findBy(parent);
-        if (tmp != null) {
+        if (tmp.isPresent()) {
             if (!(tmp.get().children.contains(child))) {
-                tmp.get().add((Node) child);
+                tmp.get().add(new Node(child));
             }
         }
         return false;
