@@ -47,7 +47,9 @@ public class TreeClass<E extends Comparable<E>> implements SimpleTree<E> {
     @Override
     public Iterator iterator() {
         Queue<Node> data = new LinkedList<>();
-        data.offer(this.root);
+        if (root != null) {
+            data.offer(this.root);
+        }
         return new Iterator() {
             @Override
             public boolean hasNext() {
@@ -61,9 +63,9 @@ public class TreeClass<E extends Comparable<E>> implements SimpleTree<E> {
             @Override
             public Object next() {
                 Node el = data.poll();
-//                for (Object child : el.leaves()) {
-//                    data.offer(((Node) child));
-//                }
+                for (Object child : el.leaves()) {
+                    data.offer(((Node) child));
+                }
                 return el;
             }
         };
