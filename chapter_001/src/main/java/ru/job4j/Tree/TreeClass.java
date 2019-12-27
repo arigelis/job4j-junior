@@ -15,7 +15,7 @@ public class TreeClass<E extends Comparable<E>> implements SimpleTree<E> {
     @Override
     public boolean add(E parent, E child) {
         boolean result = false;
-        Optional<Node> tmp = findBy(parent);
+        Optional<Node<E>> tmp = findBy(parent);
         Node<E> searchingNode = new Node<>(parent);
         if (tmp.isPresent()) {
             if (!(tmp.get().leaves().contains(searchingNode))) {
@@ -29,8 +29,8 @@ public class TreeClass<E extends Comparable<E>> implements SimpleTree<E> {
 
 
     @Override
-    public Optional<Node> findBy(Comparable value) {
-        Optional<Node> rsl = Optional.empty();
+    public Optional<Node<E>> findBy(Comparable value) {
+        Optional<Node<E>> rsl = Optional.empty();
         Queue<Node> data = new LinkedList<>();
         data.offer(this.root);
         while (!data.isEmpty()) {
@@ -47,32 +47,32 @@ public class TreeClass<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<E> iterator() {
         int expectedModCount = modCount;
-        Queue<Node> data = new LinkedList<>();
-        if (root != null) {
-            data.offer(this.root);
-        }
-        return new Iterator() {
+        Queue<Node<E>> data = new LinkedList<>(Collections.singletonList(root));
+//        if (root != null) {
+//            data.offer(this.root);
+//        }
+        return new Iterator<E>() {
             @Override
             public boolean hasNext() {
-                if (data.isEmpty())
-                    return false;
-                else {
-                    return true;
-                }
+                return !data.isEmpty();
             }
 
             @Override
-            public Object next() {
+            public E next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
                 if (modCount != expectedModCount) {
                     throw new ConcurrentModificationException();
                 }
-                Node el = data.poll();
-                for (Object child : el.leaves()) {
-                    data.offer(((Node) child));
-                }
-                return el;
+                Node<E> el = data.poll();
+//                for (Object child : el.leaves()) {
+//                    data.offer(((Node) child));
+//                }
+                data.addAll(el.leaves());
+                return el.getValue();
             }
         };
     }
