@@ -8,7 +8,8 @@ public class CustomHashMap<K, V> {
 
     boolean insert(K key, V value) {
         if (nodes.length - 1 >= length) {
-            nodes[length] = new Node<>(key, value);
+            Node<K, V> a = new Node<>(key, value);
+            nodes[length] = new Node<>((K) (a.hashCode()), value);
         } else {
             grow();
             nodes[length] = new Node<>(key, value);
