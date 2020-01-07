@@ -6,10 +6,12 @@ public class CustomHashMap<K, V> {
     private Node<K, V>[] nodes = new Node[16];
     int length = 0;
 
+
+
     boolean insert(K key, V value) {
         if (nodes.length - 1 >= length) {
             Node<K, V> a = new Node<>(key, value);
-            nodes[length] = new Node<>((K) (a.hashCode()), value);
+//            nodes[length] = new Node<>((K) (a.hashCode()), value);
         } else {
             grow();
             nodes[length] = new Node<>(key, value);
