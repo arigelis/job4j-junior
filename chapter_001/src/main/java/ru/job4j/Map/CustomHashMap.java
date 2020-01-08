@@ -4,14 +4,17 @@ import java.util.*;
 
 public class CustomHashMap<K, V> {
     private Node<K, V>[] nodes = new Node[16];
-    int length = 0;
-
-
 
     boolean insert(K key, V value) {
+        Node<K, V> a = new Node<>(key, value);
+        int length = a.hashCode();
         if (nodes.length - 1 >= length) {
-            Node<K, V> a = new Node<>(key, value);
-//            nodes[length] = new Node<>((K) (a.hashCode()), value);
+            if (nodes[length] == null) {
+                nodes[length] = a;
+            } else if (nodes[length].equals(a)) {
+                nodes[length] = a;
+            }
+            nodes[length] = new Node<>(key, value);
         } else {
             grow();
             nodes[length] = new Node<>(key, value);
