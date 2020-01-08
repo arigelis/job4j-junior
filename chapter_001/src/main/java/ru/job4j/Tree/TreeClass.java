@@ -7,7 +7,6 @@ public class TreeClass<E extends Comparable<E>> implements SimpleTree<E> {
     //    private final List<Node> children = new ArrayList<>();
     private Node root = null;
     public int modCount = 0;
-    private boolean isBinary;
 
     public TreeClass(int i) {
         root = new Node<>(i);
@@ -29,12 +28,20 @@ public class TreeClass<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     public boolean isBinary() {
-        isBinary = true;
-        while (iterator().hasNext()) {
-            if (isBinary == false)
+        boolean result = true;
+        Queue<Node> data = new LinkedList<>();
+        data.offer(this.root);
+        while (!data.isEmpty()) {
+            Node el = data.poll();
+            if (el.leaves().size() > 2) {
+                result = false;
                 break;
+            }
+            for (Object child : el.leaves()) {
+                data.offer(((Node) child));
+            }
         }
-        return isBinary;
+        return result;
     }
 
     @Override
@@ -77,12 +84,6 @@ public class TreeClass<E extends Comparable<E>> implements SimpleTree<E> {
                     throw new ConcurrentModificationException();
                 }
                 Node<E> el = data.poll();
-                if (el.leaves().size() != 2) {
-                    isBinary = false;
-                }
-//                for (Object child : el.leaves()) {
-//                    data.offer(((Node) child));
-//                }
                 data.addAll(el.leaves());
                 return el.getValue();
             }
