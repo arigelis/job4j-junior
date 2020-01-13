@@ -65,7 +65,7 @@ public class TreeClass<E extends Comparable<E>> implements SimpleTree<E> {
     @Override
     public Iterator<E> iterator() {
         int expectedModCount = modCount;
-        Queue<Node<E>> data = new LinkedList<>(Collections.singletonList(root));
+        Queue<Node<E>> data = (Queue) new LinkedList<>(Collections.singletonList(root));
 //        if (root != null) {
 //            data.offer(this.root);
 //        }
