@@ -7,17 +7,17 @@ public class CustomHashMap<K, V> {
 
     boolean insert(K key, V value) {
         Node<K, V> a = new Node<>(key, value);
-        int length = a.hashCode();
-        if (nodes.length - 1 >= length) {
-            if (nodes[length] == null) {
-                nodes[length] = a;
-            } else if (nodes[length].equals(a)) {
-                nodes[length] = a;
+        int index = key.hashCode() % (nodes.length - 1);
+        if (nodes.length - 1 >= index) {
+            if (nodes[index] == null) {
+                nodes[index] = a;
+            } else if (nodes[index].equals(a)) {
+                nodes[index] = a;
             }
-            nodes[length] = new Node<>(key, value);
+            nodes[index] = new Node<>(key, value);
         } else {
             grow();
-            nodes[length] = new Node<>(key, value);
+            nodes[index] = new Node<>(key, value);
         }
         return true;
     }
