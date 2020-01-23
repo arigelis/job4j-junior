@@ -21,13 +21,13 @@ public class Config {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        String tmp = out.toString();
-
-        String[] tmpArray = tmp.split("\r\n");
-        for (int i = 0; i < tmpArray.length; i++) {
-            String[] currItem = tmpArray[i].split("=");
-            if (!currItem[1].isEmpty()) {
-                values.put(currItem[0], currItem[1]);
+        if (out != null && !out.toString().isEmpty()) {
+            String[] tmpArray = out.toString().split("\r\n");
+            for (int i = 0; i < tmpArray.length; i++) {
+                String[] currItem = tmpArray[i].split("=");
+                if (!currItem[1].isEmpty()) {
+                    values.put(currItem[0], currItem[1]);
+                }
             }
         }
     }
