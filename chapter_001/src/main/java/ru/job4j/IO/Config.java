@@ -15,7 +15,14 @@ public class Config {
     }
 
     public void load() {
-        String tmp = toString();
+        StringJoiner out = new StringJoiner(System.lineSeparator());
+        try (BufferedReader read = new BufferedReader(new FileReader(this.path))) {
+            read.lines().forEach(out::add);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        String tmp = out.toString();
+
         String[] tmpArray = tmp.split("\r\n");
         for (int i = 0; i < tmpArray.length; i++) {
             String[] currItem = tmpArray[i].split("=");
