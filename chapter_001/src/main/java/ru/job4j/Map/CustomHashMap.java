@@ -60,7 +60,7 @@ public class CustomHashMap<K, V> {
 
             @Override
             public boolean hasNext() {
-                return nodes[index].next != null;
+                return (nodes[index] != null && nodes[index].next != null);
             }
 
             @Override
