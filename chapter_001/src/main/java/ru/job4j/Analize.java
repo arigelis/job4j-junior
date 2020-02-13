@@ -12,63 +12,67 @@ public class Analize {
     public Info diff(List<User> previous, List<User> current) {
         Info result = new Info();
         //{old realisation
-//        int difference = previous.size() - current.size();
-//        if (difference > 0) {
-//            result.deleted = difference;
-//        } else if (difference < 0) {
-//            result.added = Math.abs(difference);
-//        }
-//
-//        for (int i = 0; i < previous.size(); i++) {
-//            for (int j = 0; j < current.size(); j++) {
-//                if (previous.get(i).id == current.get(j).id) {
-//                    if (!previous.get(i).name.equalsIgnoreCase(current.get(j).name)) {
-//                        result.changed++;
-//                    }
-//                    break;
-//                }
-//            }
-//        }
+        int difference = previous.size() - current.size();
+        if (difference > 0) {
+            result.deleted = difference;
+        } else if (difference < 0) {
+            result.added = Math.abs(difference);
+        }
+
+        for (int i = 0; i < previous.size(); i++) {
+            for (int j = 0; j < current.size(); j++) {
+                if (previous.get(i).id == current.get(j).id) {
+                    if (!previous.get(i).name.equalsIgnoreCase(current.get(j).name)) {
+                        result.changed++;
+                    }
+                    break;
+                }
+            }
+        }
 //}old
 
-        Map<Integer, List<String>>
-                previousMap = previous
-                .stream()
-                .collect(
-                        Collectors
-                                .groupingBy(
-                                        User::getId,
-                                        Collectors
-                                                .mapping(
-                                                        User::getName,
-                                                        Collectors
-                                                                .toList())));
 
-        Map<Integer, List<String>>
-                currentMap = current
-                .stream()
-                .collect(
-                        Collectors
-                                .groupingBy(
-                                        User::getId,
-                                        Collectors
-                                                .mapping(
-                                                        User::getName,
-                                                        Collectors
-                                                                .toList())));
+//new real{
+//        Map<Integer, List<String>>
+//                previousMap = previous
+//                .stream()
+//                .collect(
+//                        Collectors
+//                                .groupingBy(
+//                                        User::getId,
+//                                        Collectors
+//                                                .mapping(
+//                                                        User::getName,
+//                                                        Collectors
+//                                                                .toList())));
+//
+//        Map<Integer, List<String>>
+//                currentMap = current
+//                .stream()
+//                .collect(
+//                        Collectors
+//                                .groupingBy(
+//                                        User::getId,
+//                                        Collectors
+//                                                .mapping(
+//                                                        User::getName,
+//                                                        Collectors
+//                                                                .toList())));
 
 //        Iterator iterator = previousMap.entrySet().iterator();
 
-        previousMap.entrySet().forEach(entry -> {
-            if (!currentMap.containsKey(entry.getKey())) {
-                result.deleted++;
-            } else if (!currentMap.get(entry.getKey()).equals(entry.getValue())) {
-                result.changed++;
-            }
-        });
+//        previousMap.entrySet().forEach(entry -> {
+//            if (!currentMap.containsKey(entry.getKey())) {
+//                result.deleted++;
+//            } else if (!currentMap.get(entry.getKey()).equals(entry.getValue())) {
+//                result.changed++;
+//            }
+//        });
+        //}new real
+
+
         result.added = current.size() - Math.abs(previous.size() - result.deleted);
         return result;
-
     }
 
     public static class User {
