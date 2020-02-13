@@ -6,6 +6,10 @@ public class CustomHashMap<K, V> {
     private Node<K, V>[] nodes = new Node[16];
 
     boolean insert(K key, V value) {
+        if (key == null && this.get(null) != null) {//Возможность вставить null один раз
+            return false;
+        }
+
         Node<K, V> a = new Node<>(key, value);
         int index = key.hashCode() % (nodes.length - 1);
         if (nodes.length - 1 >= index) {
