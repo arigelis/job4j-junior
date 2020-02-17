@@ -12,19 +12,16 @@ public class Analize {
     public Info diff(List<User> previous, List<User> current) {
         Info result = new Info();
 
-        Map<Integer, String> previousMap = previous.stream().collect(
-                Collectors.toMap(User::getId, User::getName));
-
         Map<Integer, String> currentMap = current.stream().collect(
                 Collectors.toMap(User::getId, User::getName));
 
-        previousMap.entrySet().forEach(entry -> {
-            if (!currentMap.containsKey(entry.getKey())) {
+        for (int i = 0; i < previous.size(); i++) {
+            if (currentMap.get(previous.get(i).getId()) == null) {
                 result.deleted++;
-            } else if (!currentMap.get(entry.getKey()).equals(entry.getValue())) {
+            } else if (!currentMap.get(previous.get(i).getId()).equals(previous.get(i).getName())) {
                 result.changed++;
             }
-        });
+        }
 
         //{old realisation
 //        int difference = previous.size() - current.size();
