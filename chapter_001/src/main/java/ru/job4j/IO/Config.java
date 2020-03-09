@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringJoiner;
+import java.util.function.Consumer;
 
 public class Config {
     private final String path;
@@ -17,23 +18,23 @@ public class Config {
     public void load() {
         StringJoiner out = new StringJoiner(System.lineSeparator());
         try (BufferedReader read = new BufferedReader(new FileReader(this.path))) {
-            read.lines().forEach(out::add);
+            read.lines().forEach(newElement -> {
+                if (!newElement.isEmpty() && !newElement.startsWith("#")) {
+                    String[] currItem = newElement.split("=");
+                    if (!currItem[1].isEmpty()) {
+                        values.put(currItem[0], currItem[1]);
+                    }
+                }
+            });
         } catch (Exception e) {
             e.printStackTrace();
-        }
-        if (out != null && out.length() > 0) {
-            String[] tmpArray = out.toString().split("\r\n");
-            for (int i = 0; i < tmpArray.length; i++) {
-                String[] currItem = tmpArray[i].split("=");
-                if (!currItem[1].isEmpty()) {
-                    values.put(currItem[0], currItem[1]);
-                }
-            }
         }
     }
 
     public String value(String key) {
-//        throw new UnsupportedOperationException("Don't impl this method yet!");
+        if (key.isEmpty()) {
+            throw new UnsupportedOperationException("Don't impl this method yet!");
+        }
         return values.get(key);
     }
 
