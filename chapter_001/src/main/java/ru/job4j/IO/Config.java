@@ -21,7 +21,7 @@ public class Config {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (out != null && !out.toString().isEmpty()) {
+        if (out != null && out.length() > 0) {
             String[] tmpArray = out.toString().split("\r\n");
             for (int i = 0; i < tmpArray.length; i++) {
                 String[] currItem = tmpArray[i].split("=");
