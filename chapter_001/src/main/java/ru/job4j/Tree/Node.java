@@ -10,8 +10,8 @@ import java.util.List;
  * @since 0.1
  */
 public class Node<E extends Comparable<E>> {
-    private final List<Node<E>> children = new ArrayList<>();
-    private final E value;
+    public final List<Node<E>> children = new ArrayList<>();
+    public final E value;
 
     public Node(final E value) {
         this.value = value;
