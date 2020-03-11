@@ -1,12 +1,15 @@
 package ru.job4j.IO;
 
 import ru.job4j.Tree.Node;
-import sun.reflect.generics.tree.Tree;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
+
+//import sun.reflect.generics.tree.Tree;
 
 public class Search {
     List<File> files(String parent, Predicate<String> condition) {
