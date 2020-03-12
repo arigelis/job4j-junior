@@ -35,6 +35,6 @@ public class ConsoleChat {
     }
 
     private String read(Scanner in) {
-        return in.next();
+        return in.nextLine();
     }
 }
