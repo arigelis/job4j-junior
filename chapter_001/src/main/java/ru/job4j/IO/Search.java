@@ -21,6 +21,9 @@ public class Search {
         data.offer(fff);
         while (!data.isEmpty()) {
             Node<File> el = data.poll();
+            if (el == null) {
+                break;
+            }
             for (File tmpFile : el.getValue().listFiles()) {
                 if (tmpFile.isDirectory() || !condition.test(tmpFile.getName())) {
                     continue;

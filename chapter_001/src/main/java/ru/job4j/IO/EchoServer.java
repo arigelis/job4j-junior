@@ -9,7 +9,7 @@ public class EchoServer {
         try (ServerSocket server = new ServerSocket(9000)) {
             boolean exit = false;
             while (true) {
-                if (exit) break;
+//                if (exit) break;
                 Socket socket = server.accept();
                 try (OutputStream out = socket.getOutputStream();
                      BufferedReader in = new BufferedReader(

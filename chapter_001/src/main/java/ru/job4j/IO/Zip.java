@@ -1,6 +1,5 @@
 package ru.job4j.IO;
 
-import javax.sql.rowset.Predicate;
 import java.io.*;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -8,16 +7,35 @@ import java.util.zip.ZipOutputStream;
 
 public class Zip {
 
-    public void pack(File source, File target) {
-        seekBy(source.getAbsolutePath(), ".xml");
-        try (ZipOutputStream zip = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(target)))) {
-            zip.putNextEntry(new ZipEntry(source.getPath()));
-            try (BufferedInputStream out = new BufferedInputStream(new FileInputStream(source))) {
-                zip.write(out.read());
+    static String dir, output, exc;
+
+    private static class ParamsParser {
+        private void parser(String[] args) {
+            for (int i = 0; i < args.length; i++) {
+                if (args[i].contains("-d")) {
+                    dir = args[i].replace("-d", "");
+                } else if (args[i].contains("-o")) {
+                    output = args[i].replace("-o", "");
+                } else if (args[i].contains("-e")) {
+                    exc = args[i].replace("-e", "");
+                }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+    }
+
+    public void pack() {
+        List<File> filesList = seekBy(dir, exc);
+        for (File file : filesList) {
+            try (ZipOutputStream zip = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(file.getAbsolutePath())))) {
+                zip.putNextEntry(new ZipEntry(output));
+                try (BufferedInputStream out = new BufferedInputStream(new FileInputStream(dir))) {
+                    zip.write(out.read());
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
     public List<File> seekBy(String root, String ext) {
@@ -26,6 +44,7 @@ public class Zip {
 
 
     public static void main(String[] args) {
-        new Zip().pack(new File("./chapter_001/pom.xml"), new File("./chapter_001/pom.zip"));
+        new ParamsParser().parser(args);
+//        new Zip().pack(new File("./chapter_001/pom.xml"), new File("./chapter_001/pom.zip"));
     }
 }
