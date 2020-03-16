@@ -13,6 +13,11 @@ public class ConsoleChat {
         process(read(in));
     }
 
+    public static void main(String[] args) {
+        ConsoleChat consoleChat = new ConsoleChat();
+        consoleChat.start();
+    }
+
     private void process(String val) {
         writeLog(val);
         if (val.equalsIgnoreCase("continue")) {
