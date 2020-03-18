@@ -45,6 +45,5 @@ public class Zip {
 
     public static void main(String[] args) {
         new ParamsParser().parser(args);
-//        new Zip().pack(new File("./chapter_001/pom.xml"), new File("./chapter_001/pom.zip"));
     }
 }
