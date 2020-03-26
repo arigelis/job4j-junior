@@ -7,18 +7,16 @@ import java.util.zip.ZipOutputStream;
 
 public class Zip {
 
-    static String dir, output, exc;
+    String dir, output, exc;
 
-    private static class ParamsParser {
-        private void parser(String[] args) {
-            for (int i = 0; i < args.length; i++) {
-                if (args[i].contains("-d")) {
-                    dir = args[i].replace("-d", "");
-                } else if (args[i].contains("-o")) {
-                    output = args[i].replace("-o", "");
-                } else if (args[i].contains("-e")) {
-                    exc = args[i].replace("-e", "");
-                }
+    public void parser(String[] args) {
+        for (int i = 0; i < args.length; i++) {
+            if (args[i].contains("-d")) {
+                dir = args[i].replace("-d", "");
+            } else if (args[i].contains("-o")) {
+                output = args[i].replace("-o", "");
+            } else if (args[i].contains("-e")) {
+                exc = args[i].replace("-e", "");
             }
         }
     }
@@ -40,10 +38,5 @@ public class Zip {
 
     public List<File> seekBy(String root, String ext) {
         return new Search().files(root, (i -> !i.endsWith(ext)));
-    }
-
-
-    public static void main(String[] args) {
-        new ParamsParser().parser(args);
     }
 }
